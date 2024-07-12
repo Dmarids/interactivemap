@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ea1efb1b2dffc1c835a8183291fa2882 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_ea1efb1b2dffc1c835a8183291fa2882" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ea1efb1b2dffc1c835a8183291fa2882 = L.map(
+                "map_ea1efb1b2dffc1c835a8183291fa2882",
+                {
+                    center: [37.1, -95.7],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 4,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_ea1efb1b2dffc1c835a8183291fa2882);
+
+            
+
+        
+    
+            var tile_layer_d737d18f9a99f6d545b09ba6b36dd32f = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_d737d18f9a99f6d545b09ba6b36dd32f.addTo(map_ea1efb1b2dffc1c835a8183291fa2882);
+        
+    
+            var tile_layer_51952a2961eaa31aa5ee37315d1adca1 = L.tileLayer(
+                "Stamen Terrain",
+                {"attribution": "Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under ODbL.", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_51952a2961eaa31aa5ee37315d1adca1.addTo(map_ea1efb1b2dffc1c835a8183291fa2882);
+        
+    
+            var tile_layer_cf19787db7a0b8b261c700ef67734380 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Map tiles by OpenStreetMap contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_cf19787db7a0b8b261c700ef67734380.addTo(map_ea1efb1b2dffc1c835a8183291fa2882);
+        
+    
+            var marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var marker_3f15b624151fc4d833337cc5e5ffbf8a = L.marker(
+                [40.7128, -74.006],
+                {}
+            ).addTo(marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba);
+        
+    
+            var icon_da95f873bf6e0e698aab6444c9cba87b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_3f15b624151fc4d833337cc5e5ffbf8a.setIcon(icon_da95f873bf6e0e698aab6444c9cba87b);
+        
+    
+        var popup_92a57ce89e2f245cad41d1a62245cbb6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f0a1d91b4bd6d4825b5a37b82dbc873a = $(`<div id="html_f0a1d91b4bd6d4825b5a37b82dbc873a" style="width: 100.0%; height: 100.0%;"><b>New York City, NY</b><br><img src='https://example.com/nyc.jpg' width='200'><br><p>Explore this vibrant city!</p></div>`)[0];
+                popup_92a57ce89e2f245cad41d1a62245cbb6.setContent(html_f0a1d91b4bd6d4825b5a37b82dbc873a);
+            
+        
+
+        marker_3f15b624151fc4d833337cc5e5ffbf8a.bindPopup(popup_92a57ce89e2f245cad41d1a62245cbb6)
+        ;
+
+        
+    
+    
+            marker_3f15b624151fc4d833337cc5e5ffbf8a.bindTooltip(
+                `<div>
+                     Click for info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_45f8a6382d6da76236cc12e24d979bcd = L.marker(
+                [34.0522, -118.2437],
+                {}
+            ).addTo(marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba);
+        
+    
+            var icon_62028c01d7b451427f3f4f2bb615e951 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_45f8a6382d6da76236cc12e24d979bcd.setIcon(icon_62028c01d7b451427f3f4f2bb615e951);
+        
+    
+        var popup_9f9208ad1db884b80816750993a8566f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d5d994dfa87cc4d69b389407f61576fb = $(`<div id="html_d5d994dfa87cc4d69b389407f61576fb" style="width: 100.0%; height: 100.0%;"><b>Los Angeles, CA</b><br><img src='https://example.com/la.jpg' width='200'><br><p>Explore this vibrant city!</p></div>`)[0];
+                popup_9f9208ad1db884b80816750993a8566f.setContent(html_d5d994dfa87cc4d69b389407f61576fb);
+            
+        
+
+        marker_45f8a6382d6da76236cc12e24d979bcd.bindPopup(popup_9f9208ad1db884b80816750993a8566f)
+        ;
+
+        
+    
+    
+            marker_45f8a6382d6da76236cc12e24d979bcd.bindTooltip(
+                `<div>
+                     Click for info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_24755f7e189d9589156307e507e32a0f = L.marker(
+                [41.8781, -87.6298],
+                {}
+            ).addTo(marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba);
+        
+    
+            var icon_f13515183ebbf8eda22f1b3c726b527b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_24755f7e189d9589156307e507e32a0f.setIcon(icon_f13515183ebbf8eda22f1b3c726b527b);
+        
+    
+        var popup_1ca2e040c4fc579cde2203710bb227db = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_eee4bc96e3709f210af33fc69301c7b6 = $(`<div id="html_eee4bc96e3709f210af33fc69301c7b6" style="width: 100.0%; height: 100.0%;"><b>Chicago, IL</b><br><img src='https://example.com/chicago.jpg' width='200'><br><p>Explore this vibrant city!</p></div>`)[0];
+                popup_1ca2e040c4fc579cde2203710bb227db.setContent(html_eee4bc96e3709f210af33fc69301c7b6);
+            
+        
+
+        marker_24755f7e189d9589156307e507e32a0f.bindPopup(popup_1ca2e040c4fc579cde2203710bb227db)
+        ;
+
+        
+    
+    
+            marker_24755f7e189d9589156307e507e32a0f.bindTooltip(
+                `<div>
+                     Click for info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d328658f636ce5e610587dc14f9c2fdb = L.marker(
+                [29.7604, -95.3698],
+                {}
+            ).addTo(marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba);
+        
+    
+            var icon_2aa2a3cf1d8abae2c058c2440faa9715 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_d328658f636ce5e610587dc14f9c2fdb.setIcon(icon_2aa2a3cf1d8abae2c058c2440faa9715);
+        
+    
+        var popup_f8c9929fafdf184b693150689b034c33 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_545d1d06770e34772a40aafcbb6d79ff = $(`<div id="html_545d1d06770e34772a40aafcbb6d79ff" style="width: 100.0%; height: 100.0%;"><b>Houston, TX</b><br><img src='https://example.com/houston.jpg' width='200'><br><p>Explore this vibrant city!</p></div>`)[0];
+                popup_f8c9929fafdf184b693150689b034c33.setContent(html_545d1d06770e34772a40aafcbb6d79ff);
+            
+        
+
+        marker_d328658f636ce5e610587dc14f9c2fdb.bindPopup(popup_f8c9929fafdf184b693150689b034c33)
+        ;
+
+        
+    
+    
+            marker_d328658f636ce5e610587dc14f9c2fdb.bindTooltip(
+                `<div>
+                     Click for info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_67c6029c8be6ddc9e0a54d133a475dca = L.marker(
+                [33.4484, -112.074],
+                {}
+            ).addTo(marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba);
+        
+    
+            var icon_fe019d544dee84740d35336c367fa8f7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_67c6029c8be6ddc9e0a54d133a475dca.setIcon(icon_fe019d544dee84740d35336c367fa8f7);
+        
+    
+        var popup_655a1325e0a48d97023a57861d806378 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2f34eb75967788da6fc86a9c73613ebb = $(`<div id="html_2f34eb75967788da6fc86a9c73613ebb" style="width: 100.0%; height: 100.0%;"><b>Phoenix, AZ</b><br><img src='https://example.com/phoenix.jpg' width='200'><br><p>Explore this vibrant city!</p></div>`)[0];
+                popup_655a1325e0a48d97023a57861d806378.setContent(html_2f34eb75967788da6fc86a9c73613ebb);
+            
+        
+
+        marker_67c6029c8be6ddc9e0a54d133a475dca.bindPopup(popup_655a1325e0a48d97023a57861d806378)
+        ;
+
+        
+    
+    
+            marker_67c6029c8be6ddc9e0a54d133a475dca.bindTooltip(
+                `<div>
+                     Click for info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_866857a83a2e2bd05bfd3394a2b7147d = L.marker(
+                [37.7749, -122.4194],
+                {}
+            ).addTo(marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba);
+        
+    
+            var icon_f28db3ea30dfd661a85d74a14990e290 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_866857a83a2e2bd05bfd3394a2b7147d.setIcon(icon_f28db3ea30dfd661a85d74a14990e290);
+        
+    
+        var popup_205c0d9120667ff96c3b3e33ecb80071 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4146e2b77bb7d1d8b28ff6a119b81106 = $(`<div id="html_4146e2b77bb7d1d8b28ff6a119b81106" style="width: 100.0%; height: 100.0%;"><b>San Francisco, CA</b><br><img src='https://example.com/sf.jpg' width='200'><br><p>Explore this vibrant city!</p></div>`)[0];
+                popup_205c0d9120667ff96c3b3e33ecb80071.setContent(html_4146e2b77bb7d1d8b28ff6a119b81106);
+            
+        
+
+        marker_866857a83a2e2bd05bfd3394a2b7147d.bindPopup(popup_205c0d9120667ff96c3b3e33ecb80071)
+        ;
+
+        
+    
+    
+            marker_866857a83a2e2bd05bfd3394a2b7147d.bindTooltip(
+                `<div>
+                     Click for info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8147030a60c229cd84fa54bb9ca7c6f7 = L.marker(
+                [47.6062, -122.3321],
+                {}
+            ).addTo(marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba);
+        
+    
+            var icon_48b973eadd214226229ab8525ddc0d5a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_8147030a60c229cd84fa54bb9ca7c6f7.setIcon(icon_48b973eadd214226229ab8525ddc0d5a);
+        
+    
+        var popup_17d6daa04a87a6be86aaf038feff73c1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0e0d466be0e6684e8a9a53424ebc9cf7 = $(`<div id="html_0e0d466be0e6684e8a9a53424ebc9cf7" style="width: 100.0%; height: 100.0%;"><b>Seattle, WA</b><br><img src='https://example.com/seattle.jpg' width='200'><br><p>Explore this vibrant city!</p></div>`)[0];
+                popup_17d6daa04a87a6be86aaf038feff73c1.setContent(html_0e0d466be0e6684e8a9a53424ebc9cf7);
+            
+        
+
+        marker_8147030a60c229cd84fa54bb9ca7c6f7.bindPopup(popup_17d6daa04a87a6be86aaf038feff73c1)
+        ;
+
+        
+    
+    
+            marker_8147030a60c229cd84fa54bb9ca7c6f7.bindTooltip(
+                `<div>
+                     Click for info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4a1f7b464e1c5adada688e57849d0e9e = L.marker(
+                [38.9072, -77.0369],
+                {}
+            ).addTo(marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba);
+        
+    
+            var icon_d78e3417d30415883b25f81b63feb8b0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_4a1f7b464e1c5adada688e57849d0e9e.setIcon(icon_d78e3417d30415883b25f81b63feb8b0);
+        
+    
+        var popup_cc5a8a28f642236ca995528d26cfbb1f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_72391afb7acc0e2b42ba873fc6e593ec = $(`<div id="html_72391afb7acc0e2b42ba873fc6e593ec" style="width: 100.0%; height: 100.0%;"><b>Washington, D.C.</b><br><img src='https://example.com/wdc.jpg' width='200'><br><p>Explore this vibrant city!</p></div>`)[0];
+                popup_cc5a8a28f642236ca995528d26cfbb1f.setContent(html_72391afb7acc0e2b42ba873fc6e593ec);
+            
+        
+
+        marker_4a1f7b464e1c5adada688e57849d0e9e.bindPopup(popup_cc5a8a28f642236ca995528d26cfbb1f)
+        ;
+
+        
+    
+    
+            marker_4a1f7b464e1c5adada688e57849d0e9e.bindTooltip(
+                `<div>
+                     Click for info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cb8bf7429e46721f280b468557625c1b = L.marker(
+                [25.7617, -80.1918],
+                {}
+            ).addTo(marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba);
+        
+    
+            var icon_95817907c121ade198ace1afebccff4c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_cb8bf7429e46721f280b468557625c1b.setIcon(icon_95817907c121ade198ace1afebccff4c);
+        
+    
+        var popup_148354c943611a365b55db390c4094bc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_875780985a3f81c3d7119c5053ca80e9 = $(`<div id="html_875780985a3f81c3d7119c5053ca80e9" style="width: 100.0%; height: 100.0%;"><b>Miami, FL</b><br><img src='https://example.com/miami.jpg' width='200'><br><p>Explore this vibrant city!</p></div>`)[0];
+                popup_148354c943611a365b55db390c4094bc.setContent(html_875780985a3f81c3d7119c5053ca80e9);
+            
+        
+
+        marker_cb8bf7429e46721f280b468557625c1b.bindPopup(popup_148354c943611a365b55db390c4094bc)
+        ;
+
+        
+    
+    
+            marker_cb8bf7429e46721f280b468557625c1b.bindTooltip(
+                `<div>
+                     Click for info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_42a59127766ce24a299ce539341a3897 = L.marker(
+                [37.3318, -122.0312],
+                {}
+            ).addTo(marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba);
+        
+    
+            var icon_2710c8ee2b4c2ed7c4a425d517122910 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_42a59127766ce24a299ce539341a3897.setIcon(icon_2710c8ee2b4c2ed7c4a425d517122910);
+        
+    
+        var popup_cf7b456188256b9d86b8c2e0bf9fc11a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b9157f6d2c281e5546c40fe1e432f7d5 = $(`<div id="html_b9157f6d2c281e5546c40fe1e432f7d5" style="width: 100.0%; height: 100.0%;"><b>San Jose, CA</b><br><img src='https://example.com/sanjose.jpg' width='200'><br><p>Explore this vibrant city!</p></div>`)[0];
+                popup_cf7b456188256b9d86b8c2e0bf9fc11a.setContent(html_b9157f6d2c281e5546c40fe1e432f7d5);
+            
+        
+
+        marker_42a59127766ce24a299ce539341a3897.bindPopup(popup_cf7b456188256b9d86b8c2e0bf9fc11a)
+        ;
+
+        
+    
+    
+            marker_42a59127766ce24a299ce539341a3897.bindTooltip(
+                `<div>
+                     Click for info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e8d8a0250927ab5ceaf8abad97d85e33 = L.marker(
+                [38.4405, -82.4456],
+                {}
+            ).addTo(marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba);
+        
+    
+            var icon_7fd78190b4471bef11fadb47e7b67f6e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e8d8a0250927ab5ceaf8abad97d85e33.setIcon(icon_7fd78190b4471bef11fadb47e7b67f6e);
+        
+    
+        var popup_bb07c77013471c90a3867621ab32bf51 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6ebf5910a667ce803fd959146aa1cad2 = $(`<div id="html_6ebf5910a667ce803fd959146aa1cad2" style="width: 100.0%; height: 100.0%;"><b>Charleston, WV</b><br><img src='https://example.com/charleston.jpg' width='200'><br><p>Explore this vibrant city!</p></div>`)[0];
+                popup_bb07c77013471c90a3867621ab32bf51.setContent(html_6ebf5910a667ce803fd959146aa1cad2);
+            
+        
+
+        marker_e8d8a0250927ab5ceaf8abad97d85e33.bindPopup(popup_bb07c77013471c90a3867621ab32bf51)
+        ;
+
+        
+    
+    
+            marker_e8d8a0250927ab5ceaf8abad97d85e33.bindTooltip(
+                `<div>
+                     Click for info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a7f08c8c0bda012a56cfe9b70b2b9282 = L.marker(
+                [39.7392, -104.9903],
+                {}
+            ).addTo(marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba);
+        
+    
+            var icon_2d6cac72834c69004b6e826eb032031b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a7f08c8c0bda012a56cfe9b70b2b9282.setIcon(icon_2d6cac72834c69004b6e826eb032031b);
+        
+    
+        var popup_418e5c4613823cc7fa1745dc45a25783 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2f5da7a6da2d54264937fd27bdc55145 = $(`<div id="html_2f5da7a6da2d54264937fd27bdc55145" style="width: 100.0%; height: 100.0%;"><b>Denver, CO</b><br><img src='https://example.com/denver.jpg' width='200'><br><p>Explore this vibrant city!</p></div>`)[0];
+                popup_418e5c4613823cc7fa1745dc45a25783.setContent(html_2f5da7a6da2d54264937fd27bdc55145);
+            
+        
+
+        marker_a7f08c8c0bda012a56cfe9b70b2b9282.bindPopup(popup_418e5c4613823cc7fa1745dc45a25783)
+        ;
+
+        
+    
+    
+            marker_a7f08c8c0bda012a56cfe9b70b2b9282.bindTooltip(
+                `<div>
+                     Click for info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2962d14cc581a5651525c2a04ac4b6e6 = L.marker(
+                [30.2672, -97.7431],
+                {}
+            ).addTo(marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba);
+        
+    
+            var icon_09f5bcd1cac5e785fe4efb7d5ee342c3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2962d14cc581a5651525c2a04ac4b6e6.setIcon(icon_09f5bcd1cac5e785fe4efb7d5ee342c3);
+        
+    
+        var popup_e4bd6aeec2edaecc107fcfb7deedf4f4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7815500abd6b9771ff7bfdae25ca55a6 = $(`<div id="html_7815500abd6b9771ff7bfdae25ca55a6" style="width: 100.0%; height: 100.0%;"><b>Austin, TX</b><br><img src='https://example.com/austin.jpg' width='200'><br><p>Explore this vibrant city!</p></div>`)[0];
+                popup_e4bd6aeec2edaecc107fcfb7deedf4f4.setContent(html_7815500abd6b9771ff7bfdae25ca55a6);
+            
+        
+
+        marker_2962d14cc581a5651525c2a04ac4b6e6.bindPopup(popup_e4bd6aeec2edaecc107fcfb7deedf4f4)
+        ;
+
+        
+    
+    
+            marker_2962d14cc581a5651525c2a04ac4b6e6.bindTooltip(
+                `<div>
+                     Click for info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1ff28772b8314f5981008ee55b535b08 = L.marker(
+                [38.2527, -85.7585],
+                {}
+            ).addTo(marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba);
+        
+    
+            var icon_320229f555221655929a15f142fe351d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1ff28772b8314f5981008ee55b535b08.setIcon(icon_320229f555221655929a15f142fe351d);
+        
+    
+        var popup_da2d12d540e5b01ee5824960b87fb6d9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_119702d9a8cddfaa8044eeb8e84e8334 = $(`<div id="html_119702d9a8cddfaa8044eeb8e84e8334" style="width: 100.0%; height: 100.0%;"><b>Louisville, KY</b><br><img src='https://example.com/louisville.jpg' width='200'><br><p>Explore this vibrant city!</p></div>`)[0];
+                popup_da2d12d540e5b01ee5824960b87fb6d9.setContent(html_119702d9a8cddfaa8044eeb8e84e8334);
+            
+        
+
+        marker_1ff28772b8314f5981008ee55b535b08.bindPopup(popup_da2d12d540e5b01ee5824960b87fb6d9)
+        ;
+
+        
+    
+    
+            marker_1ff28772b8314f5981008ee55b535b08.bindTooltip(
+                `<div>
+                     Click for info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_adc3cfe1eb0a4cf7151ac3127c505637 = L.marker(
+                [44.9778, -93.265],
+                {}
+            ).addTo(marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba);
+        
+    
+            var icon_321d1f222b4918e132a46cea7d3081e6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_adc3cfe1eb0a4cf7151ac3127c505637.setIcon(icon_321d1f222b4918e132a46cea7d3081e6);
+        
+    
+        var popup_2897e2f3612f8c03b1c693e0153d4716 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_92f676a4aa9039d80a7b262f9c73a4dc = $(`<div id="html_92f676a4aa9039d80a7b262f9c73a4dc" style="width: 100.0%; height: 100.0%;"><b>Minneapolis, MN</b><br><img src='https://example.com/minneapolis.jpg' width='200'><br><p>Explore this vibrant city!</p></div>`)[0];
+                popup_2897e2f3612f8c03b1c693e0153d4716.setContent(html_92f676a4aa9039d80a7b262f9c73a4dc);
+            
+        
+
+        marker_adc3cfe1eb0a4cf7151ac3127c505637.bindPopup(popup_2897e2f3612f8c03b1c693e0153d4716)
+        ;
+
+        
+    
+    
+            marker_adc3cfe1eb0a4cf7151ac3127c505637.bindTooltip(
+                `<div>
+                     Click for info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ad799aba87810e0feb95c3f6961de3ae = L.marker(
+                [39.9612, -82.9988],
+                {}
+            ).addTo(marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba);
+        
+    
+            var icon_890386b4badbbfc654232070e05c7758 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_ad799aba87810e0feb95c3f6961de3ae.setIcon(icon_890386b4badbbfc654232070e05c7758);
+        
+    
+        var popup_a2f8eda570f69a4f14951a29c569c88e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_be45e16dd6108b4e2eabad0a883c10e7 = $(`<div id="html_be45e16dd6108b4e2eabad0a883c10e7" style="width: 100.0%; height: 100.0%;"><b>Columbus, OH</b><br><img src='https://example.com/columbus.jpg' width='200'><br><p>Explore this vibrant city!</p></div>`)[0];
+                popup_a2f8eda570f69a4f14951a29c569c88e.setContent(html_be45e16dd6108b4e2eabad0a883c10e7);
+            
+        
+
+        marker_ad799aba87810e0feb95c3f6961de3ae.bindPopup(popup_a2f8eda570f69a4f14951a29c569c88e)
+        ;
+
+        
+    
+    
+            marker_ad799aba87810e0feb95c3f6961de3ae.bindTooltip(
+                `<div>
+                     Click for info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c49510415bdc587a976f792ed430f574 = L.marker(
+                [36.1699, -115.1398],
+                {}
+            ).addTo(marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba);
+        
+    
+            var icon_7b5d805da3ed31625a3d5fabaa7fc3d5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c49510415bdc587a976f792ed430f574.setIcon(icon_7b5d805da3ed31625a3d5fabaa7fc3d5);
+        
+    
+        var popup_d9158ac7b3d05b13cced3073ae3af18e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b6d2ea2440751ec7cb1b88bf69191cac = $(`<div id="html_b6d2ea2440751ec7cb1b88bf69191cac" style="width: 100.0%; height: 100.0%;"><b>Las Vegas, NV</b><br><img src='https://example.com/vegas.jpg' width='200'><br><p>Explore this vibrant city!</p></div>`)[0];
+                popup_d9158ac7b3d05b13cced3073ae3af18e.setContent(html_b6d2ea2440751ec7cb1b88bf69191cac);
+            
+        
+
+        marker_c49510415bdc587a976f792ed430f574.bindPopup(popup_d9158ac7b3d05b13cced3073ae3af18e)
+        ;
+
+        
+    
+    
+            marker_c49510415bdc587a976f792ed430f574.bindTooltip(
+                `<div>
+                     Click for info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_55e6908e60dd753bde287e497b1052a2 = L.marker(
+                [42.3601, -71.0589],
+                {}
+            ).addTo(marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba);
+        
+    
+            var icon_e258ef7b76ebf0cde454a20c9ab014d9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_55e6908e60dd753bde287e497b1052a2.setIcon(icon_e258ef7b76ebf0cde454a20c9ab014d9);
+        
+    
+        var popup_261a0cfb9a385c76c3ab74360c0328c2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_921862319cf27fc409bb4e6a114b3a42 = $(`<div id="html_921862319cf27fc409bb4e6a114b3a42" style="width: 100.0%; height: 100.0%;"><b>Boston, MA</b><br><img src='https://example.com/boston.jpg' width='200'><br><p>Explore this vibrant city!</p></div>`)[0];
+                popup_261a0cfb9a385c76c3ab74360c0328c2.setContent(html_921862319cf27fc409bb4e6a114b3a42);
+            
+        
+
+        marker_55e6908e60dd753bde287e497b1052a2.bindPopup(popup_261a0cfb9a385c76c3ab74360c0328c2)
+        ;
+
+        
+    
+    
+            marker_55e6908e60dd753bde287e497b1052a2.bindTooltip(
+                `<div>
+                     Click for info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cc3a0615bff1812fa3a594508f1d9d78 = L.marker(
+                [39.7684, -86.1581],
+                {}
+            ).addTo(marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba);
+        
+    
+            var icon_ad9580858e21c2e074fb2566a3d673fa = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_cc3a0615bff1812fa3a594508f1d9d78.setIcon(icon_ad9580858e21c2e074fb2566a3d673fa);
+        
+    
+        var popup_fb61a0252cf4967b6c9f8b0fbbf09c88 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9c9b8c3fab69aea5d722a8225a74ebd3 = $(`<div id="html_9c9b8c3fab69aea5d722a8225a74ebd3" style="width: 100.0%; height: 100.0%;"><b>Indianapolis, IN</b><br><img src='https://example.com/indianapolis.jpg' width='200'><br><p>Explore this vibrant city!</p></div>`)[0];
+                popup_fb61a0252cf4967b6c9f8b0fbbf09c88.setContent(html_9c9b8c3fab69aea5d722a8225a74ebd3);
+            
+        
+
+        marker_cc3a0615bff1812fa3a594508f1d9d78.bindPopup(popup_fb61a0252cf4967b6c9f8b0fbbf09c88)
+        ;
+
+        
+    
+    
+            marker_cc3a0615bff1812fa3a594508f1d9d78.bindTooltip(
+                `<div>
+                     Click for info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_022eb8017a4bab9f609f5ee5f3b6805b = L.marker(
+                [47.4419, -122.3151],
+                {}
+            ).addTo(marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba);
+        
+    
+            var icon_3cb441cb4b34e8d07039db8d748f0e93 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_022eb8017a4bab9f609f5ee5f3b6805b.setIcon(icon_3cb441cb4b34e8d07039db8d748f0e93);
+        
+    
+        var popup_6cfd8e793e37c5cd2b34ab74a4782b8a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ed0d8b88c9d063932fb9781cda833bda = $(`<div id="html_ed0d8b88c9d063932fb9781cda833bda" style="width: 100.0%; height: 100.0%;"><b>Tacoma, WA</b><br><img src='https://example.com/tacoma.jpg' width='200'><br><p>Explore this vibrant city!</p></div>`)[0];
+                popup_6cfd8e793e37c5cd2b34ab74a4782b8a.setContent(html_ed0d8b88c9d063932fb9781cda833bda);
+            
+        
+
+        marker_022eb8017a4bab9f609f5ee5f3b6805b.bindPopup(popup_6cfd8e793e37c5cd2b34ab74a4782b8a)
+        ;
+
+        
+    
+    
+            marker_022eb8017a4bab9f609f5ee5f3b6805b.bindTooltip(
+                `<div>
+                     Click for info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ca3afcb91410bc71d475d12e23250e5d = L.marker(
+                [32.7157, -117.1611],
+                {}
+            ).addTo(marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba);
+        
+    
+            var icon_33768037f356b55fd6bac0cc3cbb5962 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_ca3afcb91410bc71d475d12e23250e5d.setIcon(icon_33768037f356b55fd6bac0cc3cbb5962);
+        
+    
+        var popup_fb4725df76eebec32d872e4c8ba63160 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cd2a2d097dd2f8825c5187c26bd5a7ee = $(`<div id="html_cd2a2d097dd2f8825c5187c26bd5a7ee" style="width: 100.0%; height: 100.0%;"><b>San Diego, CA</b><br><img src='https://example.com/sandiego.jpg' width='200'><br><p>Explore this vibrant city!</p></div>`)[0];
+                popup_fb4725df76eebec32d872e4c8ba63160.setContent(html_cd2a2d097dd2f8825c5187c26bd5a7ee);
+            
+        
+
+        marker_ca3afcb91410bc71d475d12e23250e5d.bindPopup(popup_fb4725df76eebec32d872e4c8ba63160)
+        ;
+
+        
+    
+    
+            marker_ca3afcb91410bc71d475d12e23250e5d.bindTooltip(
+                `<div>
+                     Click for info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5ad669c52f4ebfe1f0a730efadede94c = L.marker(
+                [24.5854, -81.3496],
+                {}
+            ).addTo(marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba);
+        
+    
+            var icon_3b423326560c320a6800cfc2686b5a0d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5ad669c52f4ebfe1f0a730efadede94c.setIcon(icon_3b423326560c320a6800cfc2686b5a0d);
+        
+    
+        var popup_9a0c310cbd1547106ae43750c7b10d4a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_84e3b6683335c3c63d9d67e25ef3c6b9 = $(`<div id="html_84e3b6683335c3c63d9d67e25ef3c6b9" style="width: 100.0%; height: 100.0%;"><b>Key West, FL</b><br><img src='https://example.com/keywest.jpg' width='200'><br><p>Explore this vibrant city!</p></div>`)[0];
+                popup_9a0c310cbd1547106ae43750c7b10d4a.setContent(html_84e3b6683335c3c63d9d67e25ef3c6b9);
+            
+        
+
+        marker_5ad669c52f4ebfe1f0a730efadede94c.bindPopup(popup_9a0c310cbd1547106ae43750c7b10d4a)
+        ;
+
+        
+    
+    
+            marker_5ad669c52f4ebfe1f0a730efadede94c.bindTooltip(
+                `<div>
+                     Click for info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_770115cd7e32546d2590aedcba66e444 = L.marker(
+                [41.5868, -93.625],
+                {}
+            ).addTo(marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba);
+        
+    
+            var icon_75dda6688954453ecc9d9019c95d1cbd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_770115cd7e32546d2590aedcba66e444.setIcon(icon_75dda6688954453ecc9d9019c95d1cbd);
+        
+    
+        var popup_e9473e9854f460c51b18b14a3a200099 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3486b8f1ab7867bdecf7f3416781b371 = $(`<div id="html_3486b8f1ab7867bdecf7f3416781b371" style="width: 100.0%; height: 100.0%;"><b>Des Moines, IA</b><br><img src='https://example.com/desmoines.jpg' width='200'><br><p>Explore this vibrant city!</p></div>`)[0];
+                popup_e9473e9854f460c51b18b14a3a200099.setContent(html_3486b8f1ab7867bdecf7f3416781b371);
+            
+        
+
+        marker_770115cd7e32546d2590aedcba66e444.bindPopup(popup_e9473e9854f460c51b18b14a3a200099)
+        ;
+
+        
+    
+    
+            marker_770115cd7e32546d2590aedcba66e444.bindTooltip(
+                `<div>
+                     Click for info
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba.addTo(map_ea1efb1b2dffc1c835a8183291fa2882);
+        
+    
+            var marker_cluster_fe6f95fa3d22f6abbf440cd3260420basearchControl = new L.Control.Search({
+                layer: marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba,
+                
+                propertyName: 'name',
+                
+                collapsed: false,
+                textPlaceholder: 'Search for a city...',
+                position:'topleft',
+            
+                initial: false,
+                
+                hideMarkerOnCollapse: true
+            
+                });
+                marker_cluster_fe6f95fa3d22f6abbf440cd3260420basearchControl.on('search:locationfound', function(e) {
+                    marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba.setStyle(function(feature){
+                        return feature.properties.style
+                    })
+                    
+                    if(e.layer._popup)
+                        e.layer.openPopup();
+                })
+                marker_cluster_fe6f95fa3d22f6abbf440cd3260420basearchControl.on('search:collapsed', function(e) {
+                        marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba.setStyle(function(feature){
+                            return feature.properties.style
+                    });
+                });
+            map_ea1efb1b2dffc1c835a8183291fa2882.addControl( marker_cluster_fe6f95fa3d22f6abbf440cd3260420basearchControl );
+
+        
+    
+            var poly_line_2f7083273bf4f2912b7cb2fb7f2f84e3 = L.polyline(
+                [[40.7128, -74.006], [34.0522, -118.2437]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": "5, 5", "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_ea1efb1b2dffc1c835a8183291fa2882);
+        
+    
+            var marker_d806fb6364c274350e1fe12d99f9bb05 = L.marker(
+                [40.6892, -74.0445],
+                {}
+            ).addTo(map_ea1efb1b2dffc1c835a8183291fa2882);
+        
+    
+            var icon_11bbfcd586cf1b9c237d5943aaf40e1c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tree", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_d806fb6364c274350e1fe12d99f9bb05.setIcon(icon_11bbfcd586cf1b9c237d5943aaf40e1c);
+        
+    
+        var popup_8a900ceb7055e8ee1491745bcde627c5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_070b883451ebbc9b99ef325e0341beee = $(`<div id="html_070b883451ebbc9b99ef325e0341beee" style="width: 100.0%; height: 100.0%;"><b>Statue of Liberty</b><br><img src="https://example.com/statue.jpg" width="200"></div>`)[0];
+                popup_8a900ceb7055e8ee1491745bcde627c5.setContent(html_070b883451ebbc9b99ef325e0341beee);
+            
+        
+
+        marker_d806fb6364c274350e1fe12d99f9bb05.bindPopup(popup_8a900ceb7055e8ee1491745bcde627c5)
+        ;
+
+        
+    
+    
+            var layer_control_24fada47010b6664bca6393a79a7b46b_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_d737d18f9a99f6d545b09ba6b36dd32f,
+                },
+                overlays :  {
+                    "Stamen Terrain" : tile_layer_51952a2961eaa31aa5ee37315d1adca1,
+                    "OpenStreetMap" : tile_layer_cf19787db7a0b8b261c700ef67734380,
+                    "macro_element_fe6f95fa3d22f6abbf440cd3260420ba" : marker_cluster_fe6f95fa3d22f6abbf440cd3260420ba,
+                },
+            };
+            let layer_control_24fada47010b6664bca6393a79a7b46b = L.control.layers(
+                layer_control_24fada47010b6664bca6393a79a7b46b_layers.base_layers,
+                layer_control_24fada47010b6664bca6393a79a7b46b_layers.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_ea1efb1b2dffc1c835a8183291fa2882);
+
+        
+</script>
+</html>
